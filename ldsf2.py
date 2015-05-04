@@ -24,7 +24,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 from qgis.core import *
 # Initialize Qt resources from file resources.py
-import resources_rc
+import resources
 # Import the code for the dialog
 from ldsf2dialog import ldsf2Dialog
 import os.path
@@ -53,23 +53,71 @@ class ldsf2:
 
     def initGui(self):
         # Create action that will start plugin configuration
-        self.action = QAction(
-            QIcon(":/plugins/ldsf2/icon.png"),
+        self.pp_gen = QAction(
+            QIcon(":/plugins/ldsf2/images/icon.png"),
             u"LDSF Site Randomization Tool", self.iface.mainWindow())
         # connect the action to the run method
-        self.action.triggered.connect(self.run)
+        self.pp_gen.triggered.connect(self.run)
 
         # Add toolbar button and menu item
-        self.iface.addToolBarIcon(self.action)
-        self.iface.addPluginToMenu(u"&LDSF", self.action)
+        self.iface.addToolBarIcon(self.pp_gen)
+        self.iface.addPluginToMenu(u"&LDSF", self.pp_gen)
+
+        self.csv_gen = QAction(
+            QIcon(":/plugins/ldsf2/images/icon.png"),
+            u"LDSF Site Randomization Tool", self.iface.mainWindow())
+        # connect the action to the run method
+        self.csv_gen.triggered.connect(self.run)
+
+        # Add toolbar button and menu item
+        self.iface.addToolBarIcon(self.csv_gen)
+        self.iface.addPluginToMenu(u"&LDSF", self.csv_gen)
+
+        self.ext_gen = QAction(
+            QIcon(":/plugins/ldsf2/images/icon.png"),
+            u"LDSF Site Randomization Tool", self.iface.mainWindow())
+        # connect the action to the run method
+        self.ext_gen.triggered.connect(self.run)
+
+        # Add toolbar button and menu item
+        self.iface.addToolBarIcon(self.ext_gen)
+        self.iface.addPluginToMenu(u"&LDSF", self.ext_gen)
 
     def unload(self):
         # Remove the plugin menu item and icon
-        self.iface.removePluginMenu(u"&LDSF", self.action)
-        self.iface.removeToolBarIcon(self.action)
+        self.iface.removePluginMenu(u"&LDSF", self.pp_gen)
+        self.iface.removeToolBarIcon(self.pp_gen)
+
+        self.iface.removePluginMenu(u"&LDSF", self.csv_gen)
+        self.iface.removeToolBarIcon(self.csv_gen)
+
+        self.iface.removePluginMenu(u"&LDSF", self.ext_gen)
+        self.iface.removeToolBarIcon(self.ext_gen)
 
     # run method that performs all the real work
-    def run(self):
+    def pp_gen(self):
+        # show the dialog
+        self.dlg.show()
+        # Run the dialog event loop
+        result = self.dlg.exec_()
+        # See if OK was pressed
+        if result == 1:
+            # do something useful (delete the line containing pass and
+            # substitute with your code)
+            pass
+
+    def csv_gen(self):
+        # show the dialog
+        self.dlg.show()
+        # Run the dialog event loop
+        result = self.dlg.exec_()
+        # See if OK was pressed
+        if result == 1:
+            # do something useful (delete the line containing pass and
+            # substitute with your code)
+            pass
+
+    def ext_gen(self):
         # show the dialog
         self.dlg.show()
         # Run the dialog event loop

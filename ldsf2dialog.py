@@ -20,8 +20,10 @@
  ***************************************************************************/
 """
 
-from PyQt4 import QtCore, QtGui
-from ui_ldsf2 import Ui_ldsf2
+from PyQt4 import QtGui
+
+from ui import (Ui_ldsf2)
+
 # create the dialog for zoom to point
 
 

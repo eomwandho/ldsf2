@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>extgen</class>
+ <widget class="QDialog" name="extgen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>506</width>
+    <height>408</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Generate random site from extent</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>491</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tabVector">
+    <attribute name="title">
+     <string>Load extent from layer or convas</string>
+    </attribute>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>476</width>
+       <height>337</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Select Layer</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="inShape"/>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QToolButton" name="btnUpdate">
+          <property name="text">
+           <string>Update extent from layer</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="btnCanvas">
+          <property name="text">
+           <string>Update extent from canvas</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="xMin">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_5">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string> x Max</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="xMax">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QLineEdit" name="yMin">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="label_6">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>y Min</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string> x Min</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_7">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>y Max</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QLineEdit" name="yMax">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>Enter name of site and select country</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>Site Name* </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="site"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="QLabel" name="label_11">
+          <property name="text">
+           <string>Country (For Many countries leave blank)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="country">
+          <item>
+           <property name="text">
+            <string>--select--</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Cote d'Ivoire</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Angola</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Burkina Faso</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Burundi</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Benin</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Botswana</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Congo, DRC</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Central African Republic</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Congo</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Cameroon</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Djibouti</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Algeria</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Egypt</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Western Sahara</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Eritrea</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Ethiopia</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Gabon</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Ghana</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>The Gambia</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Guinea</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Equatorial Guinea</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Guinea-Bissau</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Kenya</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Comoros</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Liberia</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Lesotho</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Libya</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Morocco</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Madagascar</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mali</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mauritania</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mauritius</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Malawi</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mozambique</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Namibia</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Niger</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Nigeria</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Reunion</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Rwanda</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Seychelles</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sudan</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sierra Leone</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Senegal</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Somalia</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Sao Tome &amp; Principe</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Swaziland</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Chad</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Togo</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Tunisia</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Tanzania</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Uganda</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Mayotte</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>South Africa</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Zambia</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Zimbabwe</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_8">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Output Site Randomized Points</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="_2">
+        <item>
+         <widget class="QLineEdit" name="outShape">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="toolOut">
+          <property name="text">
+           <string>Browse</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QDialogButtonBox" name="buttonBox">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="standardButtons">
+         <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tabAbout">
+    <attribute name="title">
+     <string>About</string>
+    </attribute>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>5</y>
+       <width>311</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load extent&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>390</y>
+     <width>347</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Important Fields * (Must Be Field)</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>extgen</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>extgen</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
